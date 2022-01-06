@@ -1,13 +1,13 @@
 %global pretrans_install %(cat %{SOURCE0} | sed s/%%/%%%%/g | sed s/\\^%%%%/^%%/g)
 Name:      copy-jdk-configs
-Version:   3.7
-Release:   3
+Version:   4.0
+Release:   1
 Summary:   JDKs Configuration File
 License:   BSD
 URL:       https://pagure.io/copy_jdk_configs
-Source0:   %{URL}/blob/1d18ce8b5dec47a0468136ab6cdadfb93defe2c4/f/copy_jdk_configs.lua
-Source1:   %{URL}/blob/1d18ce8b5dec47a0468136ab6cdadfb93defe2c4/f/LICENSE
-Source2:   %{URL}/blob/1d18ce8b5dec47a0468136ab6cdadfb93defe2c4/f/copy_jdk_configs_fixFiles.sh
+Source0:   %{URL}/blob/88d3ed89f30d8b0eb4877d860fa8d951f224f156/f/copy_jdk_configs.lua
+Source1:   %{URL}/blob/88d3ed89f30d8b0eb4877d860fa8d951f224f156/f/LICENSE
+Source2:   %{URL}/blob/88d3ed89f30d8b0eb4877d860fa8d951f224f156/f/copy_jdk_configs_fixFiles.sh
 BuildArch: noarch
 Requires:  lua lua-posix
 
@@ -46,5 +46,8 @@ rm "%{rpm_state_dir}/copy_jdk_configs.lua" 2> /dev/null || :
 %license LICENSE
 
 %changelog
+* Thu Jan 06 2020 xu_ping<xuping33@huawei.com> - 4.0-1
+- Upgrade 4.0 to fix Packaging scriptlets assume global 'arg' in Lua environment
+
 * Thu Nov 28 2019 gulining<gulining1@huawei.com> - 3.7-3
 - Pakcage init
